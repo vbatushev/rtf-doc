@@ -33,6 +33,9 @@ func (text Text) compose() string {
 	if text.rotated {
 		emphTextSlice = append(emphTextSlice, "\\horzvert0")
 	}
+	if text.isTracking {
+		emphTextSlice = append(emphTextSlice, "\\expndtw40")
+	}
 
 	PreparedText := convertNonASCIIToUTF16(text.content)
 
@@ -90,6 +93,12 @@ func (text *Text) SetBold() *Text {
 // SetItalic function sets text to Italic
 func (text *Text) SetItalic() *Text {
 	text.isItalic = true
+	return text
+}
+
+// SetTracking function sets text with tracking
+func (text *Text) SetTracking() *Text {
+	text.isTracking = true
 	return text
 }
 

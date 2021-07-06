@@ -174,6 +174,7 @@ type Text struct {
 	isSuper       bool
 	isSub         bool
 	isStrike      bool
+	isTracking    bool
 	emphasis      string
 	content       string
 	rotated       bool
